@@ -1,0 +1,95 @@
+rank,previous,company,hq,sector,symbol,roic,marketCap,freeCash,sales,profit,profitDelta,roa,employees,pe
+1,1,Barrett Business Services,"Vancouver, WA",business,BBSI,15.5,664,66.1,532.8,17.9,36,6.6,468,38.8
+2,41,Microsoft ,Redmond,computer,MSFT,22.9,310503,24576,77849,21863,29,16.6,99000,13.2
+3,12,Alaska Air Group,Seattle,travel,ALK,21.3,5044,415,5156,508,61,9,13177,13.6
+4,,Nautilus ,"Vancouver, WA",consumer,NLS,26.7,263,17.5,218.8,48,184,40.3,311,18
+5,58,Washington Banking,Oak Harbor,banking,WBCO,28,275,62.8,86.5,14.5,-14,0.9,464,19.1
+6,69,StanCorp Financial Group,Portland,insurance,SFG,9.2,2923,265.8,2860.1,228.5,65,1.1,2702,12.4
+7,36,Symetra Financial,Bellevue,insurance,SYA,5.3,2232,1019.6,2139.5,220.7,7,0.7,1230,11.9
+8,15,Columbia Sportswear,Portland,consumer,COLM,12.3,2724,204.8,1685,94.3,-6,6.2,4320,28.3
+9,,Sound Financial,Seattle,banking,SFBC,6.5,43,7.4,24.5,3.9,49,1,92,11.3
+10,50,Nike,"Beaverton, OR",consumer,NKE,20.6,69282,2391,25313,2485,12,15,48000,26.5
+11,14,Banner ,Walla Walla,banking,BANR,7.1,874,86.8,220.1,46.6,-28,1.1,1131,19.5
+12,74,Pacific Continental,"Eugene, OR",banking,PCBK,3.2,283,26.4,66.8,13.8,9,1,290,19.5
+13,76,Micron Technology,"Boise, ID",semiconductors,MU,-3,23273,567,9073,1190,,7.1,30900,11.4
+14,44,Starbucks,Seattle,retail,SBUX,37.5,59043,1757.1,14892.2,8.3,-99,0.1,182000,16.8
+15,6,Blucora,Bellevue,computer,BCOR,5,1227,90.3,574,24.4,8,3.1,450,36
+16,45,Timberland Bancorp,Hoquiam,banking,TSBK,5.9,68,10.3,40.5,4.8,4,0.6,267,17.9
+17,4,Cascade Microtech,"Beaverton, OR",semiconductors,CSCD,15.8,151,10.6,120,13.4,120,13.2,426,10.6
+18,37,Mentor Graphics,"Wilsonville, OR",computer,MENT,12.7,2785,94.2,1088.7,138.7,65,8.4,5220,17.6
+19,97,Umpqua Holdings,Portland,banking,UMPQ,4.5,2143,379.1,564.3,98.4,-4,0.8,2490,20.7
+20,54,TrueBlue ,Tacoma,business,TBI,10.3,1059,73.1,1668.9,44.9,34,6.8,3200,22.4
+21,61,Precision Castparts,Portland,manufacturing,PCP,10.1,39110,1137.9,8377.8,1426.6,17,10.4,28500,23.4
+22,43,Flir Systems,"Wilsonville, OR",manufacturing,FLIR,10.6,4238,302.9,1496.4,177,-20,7.8,2839,22
+23,26,FEI ,"Hillsboro, OR",manufacturing,FEIC,13.3,3765,175.5,927.5,126.7,10,9.5,2611,29.5
+24,94,Sterling Financial,Spokane,banking,STSA,3.1,2125,393.4,519.6,93.6,-76,1,2547,21.6
+25,60,First Financial,Renton,banking,FFNW,9,170,15.5,39.3,24.5,802,2.6,93,7
+26,20,Onvia ,Seattle,business,ONVI,12,36,2.2,22,-0.6,,-2.6,130,-82.7
+27,,Intermountain Community Bancorp,"Sandpoint, ID",banking,IMCB,10.4,102,19.2,43.9,11.8,212,1.2,271,10.2
+28,,FS Bancorp ,Mountlake Terrace,banking,FSBW,8.6,56,4,30.6,3.9,-26,1,160,13.2
+29,33,Nordstrom,Seattle,retail,JWN,22.9,11816,597,12134,735,8,8.9,62500,16.6
+30,21,Expeditors International,Seattle,travel,EXPD,14.6,8963,354.1,6080.3,348.5,5,11.7,13910,26.2
+31,30,F5 Networks,Seattle,computer,FFIV,19,6909,473.1,1481.3,277.3,1,13.4,3356,25.8
+32,22,US Ecology ,"Boise, ID",business,ECOL,6.7,798,28.3,201.1,32.2,25,12.4,458,21.4
+33,5,Outerwall,Bellevue,retail,OUTR,13.6,1759,166.4,2306.6,174.8,16,10.1,2900,10.7
+34,55,Potlatch ,Spokane,forest,PCH,14.6,1692,66.6,570.3,70.6,66,10.1,880,23.8
+35,3,Jewett-Cameron Trading,"North Plains, OR",forest,JCTCF,14.7,33,0.6,49.3,3.1,2,14.2,43,-1741.7
+36,23,Blue Nile ,Seattle,retail,NILE,47,609,17.9,450,10.9,30,6.7,291,55.4
+37,75,Weyerhaeuser ,Federal Way,forest,WY,11.1,18423,711,8529,563,46,4.2,13700,27.1
+38,10,Costco Wholesale,Issaquah,retail,COST,18.1,52355,1354,105156,2039,19,7.1,184000,26.7
+39,25,Heritage Financial,Olympia,banking,HFWA,4.1,277,25.7,80.6,9.6,-28,0.6,373,27
+40,13,Expedia ,Bellevue,travel,EXPE,10.6,9034,454.6,4771.3,232.9,-17,3.1,14570,33.3
+41,65,Zumiez ,Everett,retail,ZUMZ,14.3,770,25.2,669.4,42.2,13,10.9,5600,18.4
+42,16,Key Tronic ,Spokane Valley,manufacturing,KTCC,18,116,26.3,361,12.6,8,8.8,2584,12.4
+43,90,Lattice Semiconductor,"Hillsboro, OR",semiconductors,LSCC,6.6,635,44,332.5,22.3,,5.2,783,28.1
+44,,HomeStreet,Seattle,banking,HMST,3.1,294,281.2,279.7,23.8,-71,0.8,1502,9.6
+45,81,Ambassadors Group,Spokane,retail,EPAX,0.8,79,11.6,51.2,-7.1,,-7.6,218,-69.4
+46,48,Lithia Motors,"Medford, OR",retail,LAD,9.9,1797,-18,4005.7,106,32,6.6,5700,16.9
+47,86,Washington Federal,Seattle,banking,WAFD,3.7,2383,152.2,538.2,151.5,10,1.2,1457,15.5
+48,27,Columbia Banking System,Tacoma,banking,COLB,1.6,1409,66.5,323.6,60,30,1,1695,17.7
+49,72,Greenbrier Cos.,"Lake Oswego, OR",travel,GBX,1.9,913,43.8,1756.4,-11,,-0.8,7959,17.4
+50,38,Esterline Technologies,Bellevue,manufacturing,ESL,8,3240,195.4,1969.8,164.7,46,5.1,12049,17.1
+51,71,Pope Resources,Poulsbo,forest,POPE,3.9,289,15.7,70.7,13.1,,4.5,58,23.3
+52,24,MWI Veterinary Supply,"Boise, ID",business,MWIV,14,2185,46.7,2347.5,62.8,18,8.4,1732,33.1
+53,82,Idacorp ,"Boise, ID",utilities,IDA,6.8,2604,70.2,1246.2,182.4,5,3.4,2042,14.2
+54,78,Paccar,Bellevue,travel,PCAR,7.6,20964,502.9,17123.8,1171.3,5,6,21800,17.9
+55,39,Cascade Bancorp,"Bend, OR",banking,CACB,22.1,248,8.5,65.4,50.8,754,3.8,399,4.8
+56,62,Clearwater Paper,Spokane,forest,CLW,13.1,1107,-728.4,1889.8,107,67,6.3,3860,27.6
+57,19,Bsquare ,Bellevue,computer,BSQR,182.1,40,-780.3,92.1,-5.3,,-11.6,187,-7.6
+58,83,Northwest Natural Gas,Portland,utilities,NWN,5.8,1159,-832.2,758.5,60.5,3,2.1,1100,19.1
+59,73,Plum Creek Timber,Seattle,forest,PCL,5.5,8232,-884.1,1340,214,5,4.2,1308,34.1
+60,,Erickson ,Portland,travel,EAC,7,287,-936.1,318.2,9.7,-37,2,1200,15.2
+61,49,Key Technology,Walla Walla,manufacturing,KTEC,12,90,6.3,136.8,4,793,4,602,35.8
+62,28,Schnitzer Steel,Portland,manufacturing,SCHN,-0.7,870,-51.1,2621.9,-281.4,,-17.8,3643,-95.3
+63,40,Marchex ,Seattle,business,MCHX,-0.1,333,10.6,152.6,1.8,,1.2,405,-216.5
+64,11,Amazon.com ,Seattle,retail,AMZN,2.6,183045,2031,74452,274,,0.8,117300,705.8
+65,,T-Mobile US,Bellevue,telecom,TMUS,-0.8,26975,-480,24420,35,-91,0.1,40000,316.2
+66,35,Home Federal Bancorp,"Nampa, ID",banking,HOME,-6,221,12.4,46.1,-0.3,,0,276,106.4
+67,80,Zillow ,Seattle,business,Z,-2.3,3220,9.3,197.5,-12.5,,-2.7,817,-188.2
+68,59,Avista ,Spokane,utilities,AVA,5.2,1694,-60.6,1618.5,111.1,42,2.6,1643,15.1
+69,2,Cray,Seattle,hardware,CRAY,5.2,1111,-100.5,525.7,32.2,-80,5.8,1042,34.9
+70,31,Concur Technologies,Redmond,business,CNQR,-0.5,5786,27.8,545.8,-24.4,-248,-1.7,3800,-192
+71,42,eMagin,Bellevue,manufacturing,EMAN,95.5,68,-2.7,28,-14.1,,-41.3,110,-4.9
+72,70,Rentrak ,Portland,business,RENT,-45.9,456,-8.8,99.2,-22.6,-252,-31.3,471,-112.9
+73,64,Craft Brew Alliance,Portland,consumer,BREW,1.9,312,-1.4,179.2,2,-22,1.2,745,128.8
+74,47,Emeritus ,Seattle,personal,ESC,3.8,1041,29.7,1960.6,-152.6,-80,-3.3,32000,-7.6
+75,77,Portland General Electric,Portland,utilities,POR,4.2,2358,-113,1810,105,-26,1.8,2596,22.4
+76,92,Hecla Mining ,"Coeur D'Alene, ID",mining,HL,5,1055,-124.1,382.6,-25.1,,-1.4,1312,-53.3
+77,17,Digimarc ,"Beaverton, OR",computer,DMRC,5.8,143,1.8,35,-0.5,,-0.9,149,-192.6
+78,18,Itron,Liberty Lake,manufacturing,ITRI,4.1,1622,45.4,1948.7,-146.8,,-7.4,8200,-166.4
+79,79,Seattle Genetics,Bothell,biotech,SGEN,-27.3,4891,-23.3,269.3,-62.5,-16,-13.1,582,-76.7
+80,85,TriQuint Semiconductor,"Hillsboro, OR",semiconductors,TQNT,-4.6,1349,-40.3,892.9,-38,-45,-3.6,3109,-196.6
+81,66,CUI Global ,"Tualatin, OR",hardware,CUI,-2.1,130,-0.9,60.7,-1.8,30,-2.7,170,-105.3
+82,68,Willamette Valley Vineyards,"Turner, OR",consumer,WVVI,-0.2,30,-4.3,13.3,1.4,18,5.2,126,21.7
+83,34,Northwest Pipe,"Vancouver, WA",manufacturing,NWPX,5.6,357,-8.4,475.6,-0.9,,-0.2,1050,21.1
+84,32,Coeur Mining ,"Coeur D'Alene, ID",mining,CDE,3.7,1116,12.7,746,-650.6,,-21.3,1967,-8.2
+85,9,Anchor Bancorp,Lacey,banking,ANCB,7.1,45,-0.8,24.7,-0.3,85,-0.1,134,-46.9
+86,95,OncoGenex Pharmaceuticals,Bothell,biotech,OGXI,-84.4,123,-36.2,29.9,-31.8,-51,-46.3,41,-3.9
+87,29,Electro Scientific Industries,Portland,hardware,ESIO,-14.7,315,10.9,216.6,-54.7,,-14.5,599,-5.2
+88,88,Omeros ,Seattle,biotech,OMER,-2389.6,343,-29.9,1.6,-39.8,-4,-184.6,75,-6.8
+89,93,RealNetworks ,Seattle,comm,RNWK,14.4,270,-57.6,206.2,-57.4,,-14.7,946,-4.9
+90,96,Red Lion Hotels,Spokane,travel,RLH,-14.2,119,-6.1,120.1,-17,-16,-6.9,1847,-6.9
+91,,ClearSign Combustion,Seattle,manufacturing,CLIR,-107.7,101,-4.5,0.1,-5.3,-26,-76.6,15,-19.3
+92,52,Schmitt Industries,Portland,manufacturing,SMIT,-5.5,8,-0.9,12.5,-0.5,,-4.6,54,-10.7
+93,91,Radisys,"Hillsboro, OR",hardware,RSYS,-22.5,67,-8.1,237.9,-49.4,-14,-24.2,984,-1.6
+94,84,Dendreon ,Seattle,biotech,DNDN,-52.3,470,-223,283.7,-296.8,25,-51.4,755,-1.7

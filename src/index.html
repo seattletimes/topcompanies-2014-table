@@ -1,0 +1,57 @@
+<section ng-app="nw100" class="nw100-app">
+  <div ng-controller="TableController" ng-cloak>
+    
+    <div class="controls">
+      <select ng-model="filterBy">
+        <option value="all">All Industries</option>
+        <option ng-repeat="industry in industries" value="{{industry}}">{{industry | strings}}</option>
+      </select>
+    </div>
+
+    <table class="nw100-table header" sticky>
+      <thead>
+        <tr>
+          <th ng-click="sortOn('rank')" class="sort column-rank">
+            Rank
+          <th ng-click="sortOn('name')" class="sort column-name">
+            Company
+          <th ng-click="sortOn('sector')" class="sort column-sector">
+          <th ng-repeat="column in columns" ng-click="sortOn(column)" class="sort column-{{column}}">
+            {{column | strings}}
+          <th class="column-spark">
+            <select ng-model="graphOn">
+              <option ng-repeat="graph in graphable" value="{{graph}}">{{graph | strings}}</option>
+            </select>
+    </table>
+
+    <table class="nw100-table body">
+      <tbody>
+        <tr ng-repeat="item in list | filter:industryFilter">
+          <td class="column-rank">
+            {{item.rank}} 
+            <span 
+              class="rank {{compareRank(item)}}"
+              tooltip
+              title="Previous rank: {{item.prev}}"
+            >
+              {{ compareRank(item) == "same" ? "&mdash;" : "&#10152;"}}
+            </span>
+          <td class="column-name">
+            {{item.name}} ({{item.symbol}})
+          <td class="column-sector">
+            <img 
+              ng-attr-src="{{item.sector | icon}}"
+              alt="{{item.sector | strings}}"
+              tooltip
+            >
+          <td ng-repeat="column in columns" class="column-{{column}}">
+            {{formatColumn(column, item.data[2014][column])}}
+          <td class="column-spark">
+            <spark-line spark-data="item" column="{{graphOn}}">
+    </table>
+
+  </div>
+  <script type="text/html" id="spark">
+<canvas width=180 height=30></canvas>
+  </script>
+</section>

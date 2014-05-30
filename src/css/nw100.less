@@ -1,0 +1,151 @@
+.nw100-app {
+  font-family: arial, tahoma;
+  font-size: 13px;
+
+  .transform(@args) {
+    -webkit-transform: @arguments;
+    -moz-transform: @arguments;
+    -ms-transform: @arguments;
+    transform: @arguments;
+  }
+
+  .rank {
+    width: 20px;
+    text-align: center;
+    display: inline-block;
+    cursor: default;
+
+    &.up {
+      color: #333;//rgb(30, 150, 30);
+      .transform(rotate(-90deg));
+    }
+
+    &.down {
+      color: #333;//rgb(150, 30, 30);
+      .transform(rotate(90deg));
+    }
+
+    &.same {
+      color: gray;
+      font-weight: bold;
+    }
+
+  }
+
+  .nw100-table {
+    border-collapse: collapse;
+    color: #333;
+    margin-left: 20px;
+
+    &.header {
+      position: absolute;
+      height: 50px;
+
+      &.fixed {
+        position: fixed;
+        top: 0;
+        z-index: 999;
+      }
+    }
+
+    &.body {
+      margin-top: 50px;
+    }
+
+    th, td {
+      border: 1px solid #DDD;
+      padding: 4px 8px;
+    }
+
+    th {
+      background: #333;
+      background-image: linear-gradient(to bottom, #333, #444);
+      color: white;
+      text-align: left;
+      font-family: georgia;
+      font-weight: bold;
+
+      &.sort {
+        cursor: pointer;
+      }
+    }
+
+    tr {
+      //background: #F8F8F8;
+
+      &:nth-child(2n) {
+        //background: #F8FCF8;
+      }
+    }
+
+    td {
+      &.column-marketCap,
+      &.column-freeCash,
+      &.column-sales,
+      &.column-profit,
+      &.column-roa,
+      &.column-roic {
+        text-align: right;
+      }
+    }
+
+    .column-rank {
+      text-align: right;
+      width: 50px;
+    }
+
+    .column-name {
+      width: 250px;
+    }
+
+    .column-sector {
+      width: 35px;
+      text-align: center;
+    }
+
+    .column-pe {
+      width: 50px;
+    }
+
+    .column-sales {
+      width: 85px;
+    }
+
+    .column-profit {
+      width: 88px;
+    }
+
+    .column-marketCap {
+      width: 85px;
+    }
+
+    .column-freeCash {
+      width: 90px;
+    }
+
+    .column-roa {
+      width: 60px;
+    }
+
+    .column-roic {
+      width: 60px;
+    }
+
+    .column-spark {
+      width: 180px;
+    }
+
+  }
+}
+
+.nw100-tooltip {
+  position: absolute;
+  display: none;
+  z-index: 9999;
+  background: white;
+  padding: 4px 8px;
+  border: 1px solid #DDD;
+  border-radius: 10px;
+  box-shadow: 4px 4px 16px rgba(0, 0, 0, .3);
+  text-align: center;
+}
