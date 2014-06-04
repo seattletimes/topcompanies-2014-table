@@ -33,17 +33,18 @@
 
     var strings = {
       //columns
-      "pe": "P-E ratio",
+      "pe": "P-E",
       "sales": "Sales",
       "profit": "Profits",
       "freeCash": "Free cash flow",
       "marketCap": "Market cap",
       "revenue": "Revenue",
-      "profitDelta": "Profit/Loss %",
+      "profitDelta": "Profit/ Loss %",
       "roa": "ROA",
       "roic": "ROIC",
       "stock": "Stock price",
       "stockDelta": "Change in stock price",
+      "employees": "Employees",
       //sectors
       "business": "Business services",
       "computer": "Computer software/services",
@@ -74,5 +75,30 @@
 
   });
 
+  module.filter("checkNA", function() {
+    return function(value) {
+      if (!value) return "N/A";
+      return value;
+    }
+  });
+
+  module.filter("compareRank", function() {
+    return function(item) {
+      if (!item.prev || item.prev == item.rank) return "same";
+      if (item.prev < item.rank) return "down";
+      return "up";
+    }
+  });
+
+  module.filter("rankIcons", function() {
+    var icons = {
+      "same": "–",
+      "up": "▲",
+      "down": "▼"
+    };
+    return function(rank) {
+      return icons[rank] || icons.same;
+    }
+  })
 
 })();

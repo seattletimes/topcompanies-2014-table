@@ -22,7 +22,7 @@ module.exports = {
       marketCap: "market cap.csv",
       pe: "pe_ratio.csv",
       profit: "profit.csv",
-      revenue: "revenue.csv",
+      sales: "sales.csv",
       roa: "ROA.csv",
       roic: "ROIC.csv",
       stock: "stock price.csv",
@@ -70,7 +70,7 @@ module.exports = {
       });
       masterParser.on("data", function(row) {
         var dataColumns = "roic|marketCap|freeCash|sales|profit|profitDelta|roa|employees|pe".split("|");
-        
+
         var company = {
           symbol: row.symbol,
           name: row.company,

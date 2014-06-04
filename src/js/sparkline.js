@@ -18,6 +18,7 @@
     var min = Math.min.apply(null, values);
     context.clearRect(0, 0, canvas.width, canvas.height);
     context.beginPath();
+    context.strokeStyle = "#D8761B";
     var padding = 3;
     var top = canvas.height - padding;
     var left = padding;
@@ -34,7 +35,7 @@
     if (penDown) context.stroke();
     context.closePath();
     if (position) {
-      context.fillStyle = "rgba(0, 0, 0, .4)";
+      context.fillStyle = "rgba(0, 0, 0, .5)";
       context.beginPath();
       var segment = width / (years.length - 1);
       var index = Math.round(position.x / segment);
@@ -81,7 +82,7 @@
 
           var columnText = scope.$eval(['"', dataKey, '"|strings'].join("")) + "<br>";
           tooltip.show(columnText + item.year + ": " + valueText, { top: e.pageY + 20, left: e.pageX + 10 });
-          
+
         });
 
         element.on("mouseout", function(e) {

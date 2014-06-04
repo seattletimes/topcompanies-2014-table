@@ -13,9 +13,12 @@
         position = $(at).offset();
         position.top += $(at).height();
       }
-      element.html(text);
+      if (position.left > window.innerWidth - 200) {
+        position.left -= 120;
+      }
       element.offset(position);
-      element.show();
+      element.html(text);
+      element.fadeIn(100);
     },
     hide: function() {
       $(".nw100-tooltip").hide();

@@ -1,6 +1,6 @@
 <section ng-app="nw100" class="nw100-app">
   <div ng-controller="TableController" ng-cloak>
-    
+
     <div class="controls">
       <select ng-model="filterBy">
         <option value="all">All Industries</option>
@@ -28,18 +28,18 @@
       <tbody>
         <tr ng-repeat="item in list | filter:industryFilter">
           <td class="column-rank">
-            {{item.rank}} 
-            <span 
-              class="rank {{compareRank(item)}}"
+            {{item.rank}}
+            <span
+              class="rank {{ item | compareRank }}"
               tooltip
-              title="Previous rank: {{item.prev}}"
+              title="Previous rank: {{item.prev | checkNA}}"
             >
-              {{ compareRank(item) == "same" ? "&mdash;" : "&#10152;"}}
+              {{ item | compareRank | rankIcons }}
             </span>
           <td class="column-name">
             {{item.name}} ({{item.symbol}})
           <td class="column-sector">
-            <img 
+            <img
               ng-attr-src="{{item.sector | icon}}"
               alt="{{item.sector | strings}}"
               tooltip
@@ -52,6 +52,6 @@
 
   </div>
   <script type="text/html" id="spark">
-<canvas width=180 height=30></canvas>
+<canvas width=120 height=30></canvas>
   </script>
 </section>

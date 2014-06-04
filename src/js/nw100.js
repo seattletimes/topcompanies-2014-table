@@ -6,9 +6,9 @@
 
     $scope.tooltip = tooltip;
 
-    $scope.industries = ["business", "computer", "travel", "consumer", "banking", "insurance", "semiconductors", "manufacturing", "retail", "forest", "utilities", "telecom", "hardware", "personal", "mining", "biotech", "comm"]
+    $scope.industries = ["business", "computer", "travel", "consumer", "banking", "insurance", "semiconductors", "manufacturing", "retail", "forest", "utilities", "telecom", "hardware", "personal", "mining", "biotech", "comm"].sort();
 
-    $scope.columns = ["pe", "sales", "profit", "marketCap", "freeCash", "roa", "roic"];
+    $scope.columns = ["roic", "marketCap", "freeCash", "sales", "profit", "profitDelta", "roa", "employees", "pe"];
 
     $scope.list = [];
 
@@ -23,29 +23,51 @@
     }
 
     $scope.compareRank = function(item) {
-      if (item.rank == item.prev) return "same";
-      if (item.rank > item.prev) return "up";
-      return "down";
+      var comp = "down";
+      if (!item.prev || item.rank == item.prev) {
+        comp = "same";
+      } else if (item.rank > item.prev) {
+        comp = "up";
+      }
+      return comp;
     }
 
     $scope.formatColumn = function(type, input) {
       input = input || 0;
       var types = {
-        "pe": "=",
-        "stockDelta": "%"
+        pe: "=",
+        stockDelta: "%%",
+        roa: "%",
+        roic: "%",
+        employees: ",",
+        profitDelta: "%"
       }
       type = types[type] || "$";
       switch(type) {
         case "$":
           if (input > 1000) {
             var rounded = Math.round(input / 10) / 100;
-            return "$" + rounded.toFixed(1) + " B";
+            var output = rounded.toFixed(1) + " B";
+          } else {
+            output = input.toFixed(1) + " M";
           }
-          return "$" + input.toFixed(1) + " M";
+          return ("$" + output).replace(/\$-/, "-$");
           break;
 
+        case "%%":
+          input = (input * 100).toFixed(1);
         case "%":
           return input + "%";
+
+        case ",":
+          var s = input + "";
+          var i = s.indexOf(".");
+          if (i == -1) i = s.length;
+          i -= 3;
+          for (; i >= 1; i -= 3) {
+            s = s.slice(0, i) + "," + s.slice(i);
+          }
+          return s;
 
         default:
           return input;
@@ -57,7 +79,7 @@
     $scope.sortOn = function(column) {
       if (column == $scope.sort) {
         $scope.sortDesc = !$scope.sortDesc;
-      } else if (column == "rank") {
+      } else if (column == "rank" || column == "name") {
         $scope.sortDesc = false;
       } else {
         $scope.sortDesc = true;
@@ -82,7 +104,7 @@
     };
 
     $scope.graphOn = "profit";
-    $scope.graphable = ["profit", "marketCap", "roic", "stock", "stockDelta"];
+    $scope.graphable = ["profit", "marketCap", "roic", "stock", "stockDelta", "freeCash", "sales"];
 
   });
 
