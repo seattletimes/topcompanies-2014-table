@@ -31,16 +31,16 @@ module.exports = function(grunt) {
     build: {
       dev: "dev.html",
       full: "full.html",
-      mattbase: "matt.html"
+      mattbase: "matt.html",
     },
     watch: {
       js: {
         files: ["src/js/*"],
-        tasks: ["build:dev", "concat:js"]
+        tasks: ["build:full", "concat:js"]
       },
       templates: {
         files: ["src/index.html", "frames/*"],
-        tasks: ["build:dev"]
+        tasks: ["build:full"]
       },
       css: {
         files: ["src/css/*"],
@@ -52,14 +52,20 @@ module.exports = function(grunt) {
         options: {
           base: "./build"
         }
+      },
+      cli: {
+        options: {
+          base: "./build",
+          keepalive: true
+        }
       }
     }
   });
 
   require("./json-task").task(grunt);
 
-  grunt.registerTask("default", ["build:dev", "concat:js", "json:dev", "less"]);
-  grunt.registerTask("live", ["build:dev", "concat:js", "json:live", "less"]);
+  grunt.registerTask("default", ["build:full", "concat:js", "json:dev", "less"]);
+  grunt.registerTask("live", ["build:full", "concat:js", "json:live", "less"]);
   grunt.registerTask("dev", ["connect:dev", "default", "watch"]);
 
   grunt.registerMultiTask("build", "Copy files to the build directory", function() {
@@ -70,13 +76,16 @@ module.exports = function(grunt) {
 
     var base = fs.readFileSync("src/index.html", { encoding: "utf8" });
     template = fs.readFileSync("frames/" + template, { encoding: "utf8" });
+    template = template.replace("{{ content }}", "<%= content %>");
     var output = grunt.template.process(template, {
       data: {
         content: base
       }
     });
 
-    if (!grunt.file.exists("build")) shell.cp("-r", "src/icons", "build");
+    if (!grunt.file.exists("build") || !grunt.file.exists("build/icons")) {
+      shell.cp("-r", "src/icons", "build");
+    }
 
     fs.writeFileSync("build/index.html", output);
 

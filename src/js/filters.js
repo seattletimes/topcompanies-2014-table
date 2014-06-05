@@ -33,7 +33,7 @@
 
     var strings = {
       //columns
-      "pe": "P-E",
+      "pe": "P-E (YoY)",
       "sales": "Sales",
       "profit": "Profits",
       "freeCash": "Free cash flow",
@@ -43,7 +43,7 @@
       "roa": "ROA",
       "roic": "ROIC",
       "stock": "Stock price",
-      "stockDelta": "Change in stock price",
+      "stockDelta": "Change in stock price (YoY)",
       "employees": "Employees",
       //sectors
       "business": "Business services",
@@ -77,7 +77,7 @@
 
   module.filter("checkNA", function() {
     return function(value) {
-      if (!value) return "N/A";
+      if (!value) return "not ranked";
       return value;
     }
   });

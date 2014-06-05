@@ -8,7 +8,12 @@
 
     $scope.industries = ["business", "computer", "travel", "consumer", "banking", "insurance", "semiconductors", "manufacturing", "retail", "forest", "utilities", "telecom", "hardware", "personal", "mining", "biotech", "comm"].sort();
 
-    $scope.columns = ["roic", "marketCap", "freeCash", "sales", "profit", "profitDelta", "roa", "employees", "pe"];
+    if (window.matchMedia && matchMedia("(min-device-width: 480px)").matches) {
+      $scope.columns = ["roic", "marketCap", "freeCash", "sales", "profit", "profitDelta", "roa", "employees", "pe"];
+    } else {
+      $scope.columns = [];
+      $scope.mobile = true;
+    }
 
     $scope.list = [];
 
@@ -36,15 +41,16 @@
       input = input || 0;
       var types = {
         pe: "=",
+        stock: "$",
         stockDelta: "%%",
         roa: "%",
         roic: "%",
         employees: ",",
         profitDelta: "%"
       }
-      type = types[type] || "$";
+      type = types[type] || "$$";
       switch(type) {
-        case "$":
+        case "$$":
           if (input > 1000) {
             var rounded = Math.round(input / 10) / 100;
             var output = rounded.toFixed(1) + " B";
@@ -54,10 +60,15 @@
           return ("$" + output).replace(/\$-/, "-$");
           break;
 
+        case "$":
+          return ("$" + input.toFixed(2)).replace(/\$-/, "-$");
+          break;
+
         case "%%":
           input = (input * 100).toFixed(1);
         case "%":
-          return input + "%";
+          if (input === 0) return "N/M";
+          return (input * 1).toFixed(1) + "%";
 
         case ",":
           var s = input + "";
@@ -103,8 +114,8 @@
       });
     };
 
-    $scope.graphOn = "profit";
-    $scope.graphable = ["profit", "marketCap", "roic", "stock", "stockDelta", "freeCash", "sales"];
+    $scope.graphOn = "stock";
+    $scope.graphable = ["stock", "stockDelta", "sales", "profit", "marketCap", "roic", "freeCash", ];
 
   });
 

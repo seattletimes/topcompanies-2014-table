@@ -4,6 +4,11 @@
   var render = function(canvas, data, key, position) {
     var context = canvas.getContext("2d");
     var years = [2009, 2010, 2011, 2012, 2013, 2014];
+    if (key == "stock") {
+      years = [2008, 2009, 2010, 2011, 2012, 2013];
+    } else if (key == "stockDelta") {
+      years = [2009, 2010, 2011, 2012, 2013];
+    }
     var values = [];
     var items = years.map(function(year) {
       var value = data[year][key];
@@ -19,6 +24,7 @@
     context.clearRect(0, 0, canvas.width, canvas.height);
     context.beginPath();
     context.strokeStyle = "#D8761B";
+    context.lineWidth = 1.5;
     var padding = 3;
     var top = canvas.height - padding;
     var left = padding;

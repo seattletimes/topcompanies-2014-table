@@ -1,6 +1,29 @@
 .nw100-app {
   font-family: arial, tahoma;
   font-size: 15px;
+  margin-left: 10px;
+
+  @media (max-device-width: 480px) {
+    margin-left: 0px;
+  }
+
+  * {
+    box-sizing: content-box;
+  }
+
+  .details {
+    p {
+      /*float: left;
+      width: 40%;*/
+      max-width: 600px;
+      margin-right: 5%;
+    }
+  }
+
+  .controls {
+    margin: 4px 0;
+    clear: both;
+  }
 
   @upGreen: #1AA021;
 
@@ -37,10 +60,10 @@
   .nw100-table {
     border-collapse: collapse;
     color: #333;
-    margin-left: 20px;
+    clear: both;
 
     &.header {
-      position: absolute;
+      //position: absolute;
       height: 50px;
 
       &.fixed {
@@ -51,7 +74,7 @@
     }
 
     &.body {
-      margin-top: 50px;
+      //margin-top: 50px;
     }
 
     th, td {
@@ -139,14 +162,20 @@
       width: 50px;
     }
 
+    th.column-spark {
+    }
+
     .column-spark {
       width: 120px;
       select {
-        width: 100px;
+        width: 100%;
         color: white;
         background: transparent;
+        border: black;
+        font-family: georgia;
+        font-weight: bold;
         option {
-          color: black;
+          color: white;
         }
       }
     }

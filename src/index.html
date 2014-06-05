@@ -1,7 +1,16 @@
+<link rel="stylesheet" type="text/css" href="css/nw100.css">
 <section ng-app="nw100" class="nw100-app">
   <div ng-controller="TableController" ng-cloak>
 
+    <div class="details">
+      <p>
+        Click on a column to sort the table, or choose an industry from the pull-down menu below to filter it. The last column shows a sparkline of the last five years of data for each company &mdash; click the menu in the header to choose a different subject for the graph.
+      <p>
+        All columns are for fiscal year 2013, except where otherwise noted. Stock prices are year-end (December 31st). Cells marked "N/M" are "not meaningful."
+    </div>
+
     <div class="controls">
+      <label>Filter by industry:</label>
       <select ng-model="filterBy">
         <option value="all">All Industries</option>
         <option ng-repeat="industry in industries" value="{{industry}}">{{industry | strings}}</option>
@@ -15,7 +24,7 @@
             Rank
           <th ng-click="sortOn('name')" class="sort column-name">
             Company
-          <th ng-click="sortOn('sector')" class="sort column-sector">
+          <th ng-click="sortOn('sector')" class="sort column-sector" ng-hide="mobile">
           <th ng-repeat="column in columns" ng-click="sortOn(column)" class="sort column-{{column}}">
             {{column | strings}}
           <th class="column-spark">
@@ -38,7 +47,7 @@
             </span>
           <td class="column-name">
             {{item.name}} ({{item.symbol}})
-          <td class="column-sector">
+          <td class="column-sector" ng-hide="mobile">
             <img
               ng-attr-src="{{item.sector | icon}}"
               alt="{{item.sector | strings}}"
@@ -55,3 +64,5 @@
 <canvas width=120 height=30></canvas>
   </script>
 </section>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/nw100.js"></script>
