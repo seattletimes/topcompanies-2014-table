@@ -2,8 +2,11 @@
   font-family: arial, tahoma;
   font-size: 15px;
   margin-left: 10px;
+  max-height: 999999999px;
 
-  @media (max-device-width: 480px) {
+  @mobile: ~"(max-device-width: 480px)";
+
+  @media @mobile {
     margin-left: 0px;
   }
 
@@ -17,6 +20,11 @@
       width: 40%;*/
       max-width: 600px;
       margin-right: 5%;
+
+      @media @mobile {
+        max-width: 100%;
+        margin-right: auto;
+      }
     }
   }
 
@@ -61,10 +69,14 @@
     border-collapse: collapse;
     color: #333;
     clear: both;
+    width: 100%;
 
     &.header {
       //position: absolute;
       height: 50px;
+      @media @mobile {
+        height: auto;
+      }
 
       &.fixed {
         position: fixed;
@@ -111,11 +123,19 @@
     .column-rank {
       text-align: right;
       width: 50px;
+
+      @media @mobile {
+        width: 20%;
+      }
     }
 
     .column-name {
       width: 250px;
       text-align: left;
+
+      @media @mobile {
+        width: 40%;
+      }
     }
 
     .column-sector {
@@ -167,6 +187,15 @@
 
     .column-spark {
       width: 120px;
+
+      @media @mobile {
+        width: 30%;
+
+        canvas {
+          width: 100%;
+        }
+      }
+
       select {
         width: 100%;
         color: white;

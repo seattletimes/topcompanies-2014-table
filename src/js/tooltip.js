@@ -25,10 +25,16 @@
     }
   };
 
-  $("body").on("mousemove", "[tooltip]", function(e) {
+  var matches = Element.prototype.matches || Element.prototype.mozMatchesSelector;
+
+  document.body.addEventListener("mousemove", function(e) {
+    if (!matches.call(e.target, "[tooltip]")) return;
     tooltip.show(this.getAttribute("alt") || this.getAttribute("title"), this);
   });
 
-  $("body").on("mouseout", "[tooltip]", tooltip.hide);
+  document.body.addEventListener("mouseout", function(e) {
+    if (!matches.call(e.target, "[tooltip]")) return;
+    tooltip.hide();
+  });
 
 })();
