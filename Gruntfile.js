@@ -17,9 +17,18 @@ module.exports = function(grunt) {
           "src/js/sticky.js",
           "src/js/nw100.js",
           "src/js/filters.js",
-          "src/js/sparkline.js"
+          "src/js/sparkline.js",
+          "src/js/data.js"
         ],
         dest: "build/js/nw100.js"
+      },
+      json: {
+        src: "build/nw100.json",
+        dest: "src/js/data.js",
+        options: {
+          banner: "angular.module('nw100').service('dataService', function() { return ",
+          footer: "});"
+        }
       }
     },
     less: {
@@ -64,7 +73,7 @@ module.exports = function(grunt) {
 
   require("./json-task").task(grunt);
 
-  grunt.registerTask("default", ["build:full", "concat:js", "json:dev", "less"]);
+  grunt.registerTask("default", ["build:full", "json:dev", "concat:json", "concat:js", "less"]);
   grunt.registerTask("live", ["build:full", "concat:js", "json:live", "less"]);
   grunt.registerTask("dev", ["connect:dev", "default", "watch"]);
 
@@ -86,6 +95,8 @@ module.exports = function(grunt) {
     if (!grunt.file.exists("build") || !grunt.file.exists("build/icons")) {
       shell.cp("-r", "src/icons", "build");
     }
+
+    shell.cp("-r", "src/share.min.js", "build");
 
     fs.writeFileSync("build/index.html", output);
 

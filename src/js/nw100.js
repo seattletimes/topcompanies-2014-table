@@ -2,7 +2,7 @@
 
   var module = window.module = angular.module("nw100", []);
 
-  module.controller("TableController", function($scope, $http) {
+  module.controller("TableController", ["$scope", "dataService", function($scope, dataService) {
 
     $scope.tooltip = tooltip;
 
@@ -17,9 +17,7 @@
 
     $scope.list = [];
 
-    $http({ url: "nw100.json" }).then(function(json) {
-      $scope.list = json.data.list;
-    });
+    $scope.list = dataService.list;
 
     $scope.filterBy = "all";
     $scope.industryFilter = function(value) {
@@ -117,6 +115,6 @@
     $scope.graphOn = "stock";
     $scope.graphable = ["stock", "stockDelta", "sales", "profit", "marketCap", "roic", "freeCash", ];
 
-  });
+  }]);
 
 })();
