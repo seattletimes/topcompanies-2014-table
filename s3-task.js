@@ -39,9 +39,10 @@ module.exports = {
       publish: config.s3
     });
 
-    grunt.registerMultiTask("publish", "Pushes the build folder to S3", function(deploy) {
+    grunt.registerTask("publish", "Pushes the build folder to S3", function(deploy) {
+      deploy = deploy || "stage";
       var c = this.async();
-      var bucketConfig = this.data;
+      var bucketConfig = config.s3[deploy];
       var s3 = new aws.S3();
       s3.createBucket({
         Bucket: bucketConfig.bucket
