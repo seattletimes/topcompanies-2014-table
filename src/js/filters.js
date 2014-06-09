@@ -6,20 +6,20 @@
       "business": "icon_bizservices_2.jpg",
       "computer": "icon_computer_2.jpg",
       "hardware": "icon_computer_2.jpg",
-      "semiconductors": "icon_semiconductor_2.jpg",
+      "semiconductors": "semiconductor1.png",
       "travel": "icon_transportation_2.jpg",
       "utilities": "icon_utilities_2.jpg",
       "forest": "icon_forest_2.jpg",
       "comm": "icon_communications_2.jpg",
       "telecom": "icon_communications_2.jpg",
       "biotech": "icon_biotech_2.jpg",
-      "banking": "icon_banking_2.jpg",
+      "banking": "banking2.png",
       "mining": "icon_mining_2.jpg",
       "retail": "icon_retail_2.jpg",
       "personal": "icon_retail_2.jpg",
       "manufacturing": "icon_manufacturing_2.jpg",
       "consumer": "icon_retail_2.jpg",
-      "insurance": "icon_banking_2.jpg"
+      "insurance": "banking2.png"
     }
     return function(value) {
       if (value in icons) {

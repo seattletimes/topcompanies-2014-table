@@ -25,11 +25,14 @@
     }
   };
 
-  var matches = Element.prototype.matches || Element.prototype.mozMatchesSelector;
+  var matches = Element.prototype.matches ||
+    Element.prototype.mozMatchesSelector ||
+    Element.prototype.msMatchesSelector ||
+    Element.prototype.webkitMatchesSelector;
 
   document.body.addEventListener("mousemove", function(e) {
     if (!matches.call(e.target, "[tooltip]")) return;
-    tooltip.show(this.getAttribute("alt") || this.getAttribute("title"), this);
+    tooltip.show(e.target.getAttribute("alt") || e.target.getAttribute("title"), e.target);
   });
 
   document.body.addEventListener("mouseout", function(e) {

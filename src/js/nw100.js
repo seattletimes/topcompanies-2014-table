@@ -8,11 +8,11 @@
 
     $scope.industries = ["business", "computer", "travel", "consumer", "banking", "insurance", "semiconductors", "manufacturing", "retail", "forest", "utilities", "telecom", "hardware", "personal", "mining", "biotech", "comm"].sort();
 
-    if (window.matchMedia && matchMedia("(min-device-width: 480px)").matches) {
-      $scope.columns = ["roic", "marketCap", "freeCash", "sales", "profit", "profitDelta", "roa", "employees", "pe"];
-    } else {
+    if (window.matchMedia && matchMedia("(max-device-width: 480px)").matches) {
       $scope.columns = [];
       $scope.mobile = true;
+    } else {
+      $scope.columns = ["roic", "marketCap", "freeCash", "sales", "profit", "profitDelta", "roa", "employees", "pe"];
     }
 
     $scope.list = [];
@@ -65,7 +65,7 @@
         case "%%":
           input = (input * 100).toFixed(1);
         case "%":
-          if (input === 0) return "N/M";
+          if (input === 0) return "NM";
           return (input * 1).toFixed(1) + "%";
 
         case ",":

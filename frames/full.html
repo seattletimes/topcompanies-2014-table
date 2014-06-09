@@ -36,6 +36,9 @@ body {
   line-height: 1.4;
   background: white;
 }
+a img {
+  border: none;
+}
 canvas.backdrop {
   position: fixed;
   height: 100%;
@@ -159,7 +162,7 @@ nav {
   right: 0;
   line-height: 40px;
   vertical-align: middle;
-  font-family: verdana;
+  font-family: georgia;
   padding-left: 10px;
   z-index: 999;
 }
@@ -246,10 +249,14 @@ img.fallback {
 /* commerce */
 .ad {
   text-align: center;
+  max-width: 100%;
+  overflow: hidden;
 }
 .ad > div,
-.ad img {
+.ad img,
+.ad iframe {
   display: inline-block;
+  max-width: 95%;
 }
 .share-button {
   position: absolute;
@@ -285,7 +292,7 @@ img.fallback {
         <img src="http://seattletimes.com/art/ui/seattletimeslogo_home.svg" class="logo"/>
       </a>
       <ul>
-        <li id="bonw-title">Top Northwest companies 2013</a></li>
+        <li id="bonw-title">Top Northwest companies 2014</a></li>
         <li class="company-ranking"><a href="#ranked-1">1<sup>st</sup></a></li>
         <li class="company-ranking"><a href="#ranked-2">2<sup>nd</sup></a></li>
         <li class="company-ranking"><a href="#ranked-3">3<sup>rd</sup></a></li>
@@ -303,15 +310,15 @@ img.fallback {
           <h2>Barrett Business Services</h2>
         </div>
 
-        <p class="description">This is a description of the company. Lorem ipsum, all that, two sentences here should be plenty.</p>
+        <p class="description">The company hits the HR sweet spot after posting a profitable year and taking on more clients around the country.</p>
 
-        <p><label>Headquarters</label> SeaTac</p>
-        <p><label>CEO</label> Brad Tilden</p>
-        <p><label>Employees in 2013</label> 13,700 (about 6,500 in Washington State)</p>
-        <p><label>What it does</label> Seattle's Hometown airline serves the Pacific Northwest</p>
-        <p><label>What sets it apart</label> A reputation for good service and an extensive hub network from Seattle to Alaska, the West Coast, the East Coast, Hawaii and Mexico.</p>
-        <p><label>2013 cash flow</label> $415 million</p>
-        <p><label>2013 sales</label> $5.2 billion</p>
+        <p><label>Headquarters</label> Vancouver, Wash.</p>
+        <p><label>CEO</label> Michael Elich</p>
+        <p><label>Employees in 2013</label> 79,315</p>
+        <p><label>What it does</label> Outsourcing services for small and medium-sized businesses, including temporary staffing, payroll, recruitment and human resources.</p>
+        <p><label>What sets it apart</label> 74 percent of their revenue comes from California.</p>
+        <p><label>2013 cash flow</label> $66.1 million</p>
+        <p><label>2013 sales</label> $532.8 million</p>
         <a class="read-more" href="">READ STORY &raquo;</a>
       </div>
       <div style="clear: both"></div>
@@ -324,15 +331,15 @@ img.fallback {
           <h2>Microsoft</h2>
         </div>
 
-        <p class="description">This is a description of the company. Lorem ipsum, all that, two sentences here should be plenty.</p>
+        <p class="description">Despite criticism that it lagged in mobile and search sectors, the company still reeled in billions in revenue and profits.</p>
 
-        <p><label>Headquarters</label> SeaTac</p>
-        <p><label>CEO</label> Brad Tilden</p>
-        <p><label>Employees in 2013</label> 13,700 (about 6,500 in Washington State)</p>
-        <p><label>What it does</label> Seattle's Hometown airline serves the Pacific Northwest</p>
-        <p><label>What sets it apart</label> A reputation for good service and an extensive hub network from Seattle to Alaska, the West Coast, the East Coast, Hawaii and Mexico.</p>
-        <p><label>2013 cash flow</label> $415 million</p>
-        <p><label>2013 sales</label> $5.2 billion</p>
+        <p><label>Headquarters</label> Redmond</p>
+        <p><label>CEO</label> Steve Ballmer (Satya Nadella named CEO on Feb. 4, 2014)</p>
+        <p><label>Employees in 2013</label> 99,000</p>
+        <p><label>What it does</label> Create software, services and hardware.</p>
+        <p><label>What sets it apart</label> Sheer size and breadth.</p>
+        <p><label>2013 cash flow</label> $24.6 billion</p>
+        <p><label>2013 sales</label> $77.8 billion</p>
         <a class="read-more" href="">READ STORY &raquo;</a>
       </div>
       <div style="clear: both"></div>
@@ -345,13 +352,13 @@ img.fallback {
           <h2>Alaska Air Group</h2>
         </div>
 
-        <p class="description">This is a description of the company. Lorem ipsum, all that, two sentences here should be plenty.</p>
+        <p class="description">The Seattle-based airline slashed costs to compete in the new low-cost air-travel era so it was able to expand while rivals pulled back.</p>
 
         <p><label>Headquarters</label> SeaTac</p>
         <p><label>CEO</label> Brad Tilden</p>
-        <p><label>Employees in 2013</label> 13,700 (about 6,500 in Washington State)</p>
-        <p><label>What it does</label> Seattle's Hometown airline serves the Pacific Northwest</p>
-        <p><label>What sets it apart</label> A reputation for good service and an extensive hub network from Seattle to Alaska, the West Coast, the East Coast, Hawaii and Mexico.</p>
+        <p><label>Employees in 2013</label> 13,177 (about 6,500 in Washington state)</p>
+        <p><label>What it does</label> Seattle's hometown airline serves the Pacific Northwest and far beyond.</p>
+        <p><label>What sets it apart</label> A reputation for good service, an extensive hub network from Seattle, and routes to Alaska, the West Coast, the East Coast, Hawaii and Mexico.</p>
         <p><label>2013 cash flow</label> $415 million</p>
         <p><label>2013 sales</label> $5.2 billion</p>
         <a class="read-more" href="">READ STORY &raquo;</a>
@@ -363,18 +370,18 @@ img.fallback {
       <div class="scroll-text company-info">
         <div class="header">
           <img class="numeral" src="img/NW4.png">
-          <h2>Nautilus</h2>
+          <h2>Nautilus, Inc.</h2>
         </div>
 
-        <p class="description">This is a description of the company. Lorem ipsum, all that, two sentences here should be plenty.</p>
+        <p class="description">The fitness-equipment firm emerged form years in the red after shifting its focus to home use and licensing its brand.</p>
 
-        <p><label>Headquarters</label> SeaTac</p>
-        <p><label>CEO</label> Brad Tilden</p>
-        <p><label>Employees in 2013</label> 13,700 (about 6,500 in Washington State)</p>
-        <p><label>What it does</label> Seattle's Hometown airline serves the Pacific Northwest</p>
-        <p><label>What sets it apart</label> A reputation for good service and an extensive hub network from Seattle to Alaska, the West Coast, the East Coast, Hawaii and Mexico.</p>
-        <p><label>2013 cash flow</label> $415 million</p>
-        <p><label>2013 sales</label> $5.2 billion</p>
+        <p><label>Headquarters</label> Vancouver, Wash.</p>
+        <p><label>CEO</label> Bruce Cazenave</p>
+        <p><label>Employees in 2013</label> 311</p>
+        <p><label>What it does</label> Build and sell exercise equipment under the Bowflex, Nautilus, Schwinn and Universal brands.</p>
+        <p><label>What sets it apart</label> It stopped selling commercial exercise equipment to gyms in 2011, licensing its brand name and technology.</p>
+        <p><label>2013 cash flow</label> $17.5 million</p>
+        <p><label>2013 sales</label> $218.8 million</p>
         <a class="read-more" href="">READ STORY &raquo;</a>
       </div>
       <div style="clear: both"></div>
@@ -387,15 +394,15 @@ img.fallback {
           <h2>Washington Banking</h2>
         </div>
 
-        <p class="description">This is a description of the company. Lorem ipsum, all that, two sentences here should be plenty.</p>
+        <p class="description">In 2013, it paid out a record 54 cents a share in dividends and agreed to be acquired, a situation that analysts say is unusual for banks today.</p>
 
-        <p><label>Headquarters</label> SeaTac</p>
-        <p><label>CEO</label> Brad Tilden</p>
-        <p><label>Employees in 2013</label> 13,700 (about 6,500 in Washington State)</p>
-        <p><label>What it does</label> Seattle's Hometown airline serves the Pacific Northwest</p>
-        <p><label>What sets it apart</label> A reputation for good service and an extensive hub network from Seattle to Alaska, the West Coast, the East Coast, Hawaii and Mexico.</p>
-        <p><label>2013 cash flow</label> $415 million</p>
-        <p><label>2013 sales</label> $5.2 billion</p>
+        <p><label>Headquarters</label> Oak Harbor, Wash.</p>
+        <p><label>CEO</label> John Wagner</p>
+        <p><label>Employees in 2013</label> 464</p>
+        <p><label>What it does</label> Held deposits and made loans through its subsidiary Whidbey Island Bank.</p>
+        <p><label>What sets it apart</label> A strong community bank that consistently booked profit and paid dividends each quarter. It agreed to merge with another community bank to compete in a more difficult economic climate for local banks.</p>
+        <p><label>2013 cash flow</label> $62.8 million</p>
+        <p><label>2013 sales</label> $86.5 million</p>
         <a class="read-more" href="">READ STORY &raquo;</a>
       </div>
       <div style="clear: both"></div>
@@ -412,7 +419,7 @@ img.fallback {
     </section>
 
     <section id="chart" class="text">
-      <h1>TABLE</h1>
+      <h1>All Companies</h1>
       <div>
         {{ content }}
       </div>

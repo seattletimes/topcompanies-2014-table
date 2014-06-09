@@ -1,0 +1,12 @@
+{
+  "s3": {
+    "stage": {
+      "bucket": "apps-stage.seattletimesdata.com",
+      "path": "topcompanies-2014"
+    },
+    "live": {
+      "bucket": "apps.seattletimesdata.com",
+      "path": "topcompanies-2014"
+    }
+  }
+}

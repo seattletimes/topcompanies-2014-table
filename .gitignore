@@ -2,3 +2,4 @@ build
 old
 node_modules
 src/js/data.js
+auth.json

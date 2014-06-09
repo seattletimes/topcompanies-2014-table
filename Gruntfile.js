@@ -7,6 +7,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks("grunt-contrib-connect");
   grunt.loadNpmTasks("grunt-contrib-less");
+  grunt.loadNpmTasks("grunt-contrib-uglify");
 
   grunt.initConfig({
     concat: {
@@ -28,6 +29,17 @@ module.exports = function(grunt) {
         options: {
           banner: "angular.module('nw100').service('dataService', function() { return ",
           footer: "});"
+        }
+      }
+    },
+    uglify: {
+      options: {
+        mangle: false,
+        report: "gzip"
+      },
+      out: {
+        files: {
+          "./build/js/nw100.js": "./build/js/nw100.js"
         }
       }
     },
@@ -72,9 +84,10 @@ module.exports = function(grunt) {
   });
 
   require("./json-task").task(grunt);
+  require("./s3-task").task(grunt);
 
-  grunt.registerTask("default", ["build:full", "json:dev", "concat:json", "concat:js", "less"]);
-  grunt.registerTask("live", ["build:full", "concat:js", "json:live", "less"]);
+  grunt.registerTask("default", ["build:full", "json:live", "concat:json", "concat:js", "less"]);
+  grunt.registerTask("live", ["build:full", "json:live", "concat:json", "concat:js", "less", "uglify"]);
   grunt.registerTask("dev", ["connect:dev", "default", "watch"]);
 
   grunt.registerMultiTask("build", "Copy files to the build directory", function() {
@@ -94,6 +107,10 @@ module.exports = function(grunt) {
 
     if (!grunt.file.exists("build") || !grunt.file.exists("build/icons")) {
       shell.cp("-r", "src/icons", "build");
+    }
+
+    if (!grunt.file.exists("build") || !grunt.file.exists("build/img")) {
+      shell.cp("-r", "src/img", "build");
     }
 
     shell.cp("-r", "src/share.min.js", "build");

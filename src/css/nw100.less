@@ -69,7 +69,10 @@
     border-collapse: collapse;
     color: #333;
     clear: both;
-    width: 100%;
+
+    @media @mobile {
+      width: 100%;
+    }
 
     &.header {
       //position: absolute;
@@ -204,7 +207,8 @@
         font-family: georgia;
         font-weight: bold;
         option {
-          color: white;
+          background: white;
+          color: black;
         }
       }
     }
