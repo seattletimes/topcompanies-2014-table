@@ -18,10 +18,10 @@
       }
       element.offset(position);
       element.html(text);
-      element.fadeIn(100);
+      element.show();
     },
     hide: function() {
-      $(".nw100-tooltip").hide();
+      $(".nw100-tooltip").hide().css({ top: 0, left: 0 });
     }
   };
 

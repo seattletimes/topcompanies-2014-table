@@ -70,6 +70,7 @@
         });
 
         var onmove = function(e) {
+          if (e.target.tagName.toLowerCase() != "canvas") return;
           var position;
           if (e.offsetX) {
             position = {
