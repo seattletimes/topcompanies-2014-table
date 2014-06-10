@@ -69,7 +69,7 @@
           render(canvas, data, dataKey);
         });
 
-        element.on("mousemove", function(e) {
+        var onmove = function(e) {
           var position;
           if (e.offsetX) {
             position = {
@@ -89,7 +89,15 @@
           var columnText = scope.$eval(['"', dataKey, '"|strings'].join("")) + "<br>";
           tooltip.show(columnText + item.year + ": " + valueText, { top: e.pageY + 20, left: e.pageX + 10 });
 
-        });
+        };
+
+        element.on("mousemove", onmove);
+        element.on("click", onmove);
+        /*element.on("touchstart", function(e) {
+          if (!e.touches) return;
+          var touch = e.targetTouches[0];
+          onmove(touch);
+        });*/
 
         element.on("mouseout", function(e) {
           render(canvas, data, dataKey);

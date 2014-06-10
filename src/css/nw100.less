@@ -1,10 +1,9 @@
 .nw100-app {
-  font-family: arial, tahoma;
+  font-family: arial, tahoma, sans-serif;
   font-size: 15px;
-  margin-left: 10px;
   max-height: 999999999px;
 
-  @mobile: ~"(max-device-width: 480px)";
+  @mobile: ~"(max-device-width: 1000px)";
 
   @media @mobile {
     margin-left: 0px;
@@ -18,7 +17,7 @@
     p {
       /*float: left;
       width: 40%;*/
-      max-width: 600px;
+      max-width: 800px;
       margin-right: 5%;
 
       @media @mobile {
@@ -69,9 +68,12 @@
     border-collapse: collapse;
     color: #333;
     clear: both;
+    min-width: 1280px;
+    background: white;
 
     @media @mobile {
       width: 100%;
+      min-width: 0px;
     }
 
     &.header {
@@ -94,7 +96,7 @@
 
     th, td {
       border: 1px solid #DDD;
-      padding: 4px 8px;
+      padding: 4px 4px;
     }
 
     th {
@@ -102,12 +104,24 @@
       background-image: linear-gradient(to bottom, #333, #444);
       color: white;
       text-align: center;
-      font-family: georgia;
-      //font-weight: bold;
-      font-size: 14px;
+      font-family: arial, sans-serif;
+      font-weight: normal;
+      font-size: 12px;
+      text-transform: uppercase;
+      position: relative;
 
       &.sort {
         cursor: pointer;
+      }
+
+      &.sorted {
+        &::before {
+          content: "▼";
+        }
+
+        &.up::before {
+          content: "▲";
+        }
       }
     }
 
@@ -124,7 +138,6 @@
     }
 
     .column-rank {
-      text-align: right;
       width: 50px;
 
       @media @mobile {
@@ -154,7 +167,7 @@
     }
 
     .column-marketCap {
-      width: 75px;
+      width: 84px;
     }
 
     .column-freeCash {
@@ -162,7 +175,7 @@
     }
 
     .column-sales {
-      width: 70px;
+      width: 66px;
     }
 
     .column-profit {
@@ -174,7 +187,7 @@
     }
 
     .column-roa {
-      width: 60px;
+      width: 55px;
     }
 
     .column-employees {
@@ -204,8 +217,8 @@
         color: white;
         background: transparent;
         border: black;
-        font-family: georgia;
-        font-weight: bold;
+        font-family: Arial;
+        text-transform: uppercase;
         option {
           background: white;
           color: black;
@@ -221,6 +234,8 @@
   font-family: verdana;
   display: none;
   z-index: 9999;
+  top: 0;
+  left: 0;
   background: white;
   padding: 4px 8px;
   border: 1px solid #DDD;

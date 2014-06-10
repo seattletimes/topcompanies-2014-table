@@ -1,6 +1,6 @@
 (function() {
 
-  if (window.matchMedia && matchMedia("(max-device-width: 480px)").matches) return;
+  if (window.matchMedia && matchMedia("(max-device-width: 1000px)").matches) return;
 
   var stuck = $("[sticky]");
   var nav = $("nav");
@@ -10,13 +10,15 @@
   }
   stuck.css("top", top + "px");
 
-  $(window).on("scroll", function() {
+  var restick = function() {
     stuck.removeClass("fixed");
     stuck.each(function(i, element) {
       if (element.getBoundingClientRect().top < top) {
         $(element).addClass("fixed");
       }
     });
-  });
+  };
+
+  $(window).on("scroll resize load", restick);
 
 })();

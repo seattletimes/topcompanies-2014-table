@@ -8,7 +8,7 @@
 
     $scope.industries = ["business", "computer", "travel", "consumer", "banking", "insurance", "semiconductors", "manufacturing", "retail", "forest", "utilities", "telecom", "hardware", "personal", "mining", "biotech", "comm"].sort();
 
-    if (window.matchMedia && matchMedia("(max-device-width: 480px)").matches) {
+    if (window.matchMedia && matchMedia("(max-device-width: 1000px)").matches) {
       $scope.columns = [];
       $scope.mobile = true;
     } else {

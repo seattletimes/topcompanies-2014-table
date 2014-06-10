@@ -4,9 +4,11 @@
 
     <div class="details">
       <p>
-        Click on a column to sort the table, or choose an industry from the pull-down menu below to filter it. The last column shows a sparkline of the last five years of data for each company &mdash; click the menu in the header to choose a different subject for the graph.
+        No single yardstick would be a fair gauge to rank the Northwest's publicly traded companies. We picked five measures of corporate performance &mdash; return on invested capital, free cash-flow yield, stock-price appreciation, revenue growth and dividend yield &mdash; then combined them into a single ranking using our proprietary formula. <a href="http://seattletimes.com/html/businesstechnology/2023805459_topcomethodology15xml.html">Read more about our methodology</a>.
+
       <p>
-        All columns are for fiscal year 2013, except where otherwise noted. Stock prices are year-end (December 31st). Cells marked "NM" are "not meaningful."
+        <strong>TO USE THE CHART:</strong> Click on a column to sort the chart, or filter by industry. The last column graphs the last five years of data for each company; you can select more options to graph from the dropdown menu. All columns are for fiscal year 2013, except where otherwise noted. Stock prices are year-end (Dec. 31). Cells marked "NM" are "not meaningful."
+
     </div>
 
     <div class="controls">
@@ -20,12 +22,12 @@
     <table class="nw100-table header" sticky>
       <thead>
         <tr>
-          <th ng-click="sortOn('rank')" class="sort column-rank">
+          <th ng-click="sortOn('rank')" class="sort column-rank" sort-indicator="rank">
             Rank
-          <th ng-click="sortOn('name')" class="sort column-name">
+          <th ng-click="sortOn('name')" class="sort column-name" sort-indicator="name">
             Company
-          <th ng-click="sortOn('sector')" class="sort column-sector" ng-hide="mobile">
-          <th ng-repeat="column in columns" ng-click="sortOn(column)" class="sort column-{{column}}">
+          <th ng-click="sortOn('sector')" class="sort column-sector" ng-hide="mobile" sort-indicator="sector">
+          <th ng-repeat="column in columns" ng-click="sortOn(column)" class="sort column-{{column}}" sort-indicator="{{column}}">
             {{column | strings}}
           <th class="column-spark">
             <select ng-model="graphOn">
@@ -41,7 +43,7 @@
             <span
               class="rank {{ item | compareRank }}"
               tooltip
-              title="Previous rank: {{item.prev | checkNA}}"
+              alt="Previous rank: {{item.prev | checkNA}}"
             >
               {{ item | compareRank | rankIcons }}
             </span>

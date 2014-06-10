@@ -19,6 +19,7 @@ module.exports = function(grunt) {
           "src/js/nw100.js",
           "src/js/filters.js",
           "src/js/sparkline.js",
+          "src/js/sortIndicator.js",
           "src/js/data.js"
         ],
         dest: "build/js/nw100.js"
@@ -87,7 +88,7 @@ module.exports = function(grunt) {
   require("./s3-task").task(grunt);
 
   grunt.registerTask("default", ["build:full", "json:live", "concat:json", "concat:js", "less"]);
-  grunt.registerTask("live", ["build:full", "json:live", "concat:json", "concat:js", "less", "uglify"]);
+  grunt.registerTask("live", ["build:full", "json:live", "concat:json", "concat:js", "less"]);
   grunt.registerTask("dev", ["connect:dev", "default", "watch"]);
 
   grunt.registerMultiTask("build", "Copy files to the build directory", function() {
